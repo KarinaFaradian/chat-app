@@ -40,5 +40,9 @@
     "lint:fix": "prettier --write . && eslint --fix --ext .js,.ts . && stylelint \"**/*scss\" --fix",
     "start": "webpack serve --open --config webpack.js",
     "build": "webpack --config webpack.js"
+  },
+  "dependencies": {
+    "redux": "^4.2.0",
+    "redux-thunk": "^2.4.2"
   }
 }
