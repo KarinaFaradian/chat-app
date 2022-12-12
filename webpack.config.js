@@ -2,10 +2,11 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 
 module.exports = {
-    mode: 'development',
-    entry: {
+  mode: "development",
+  entry: {
     app: path.join(__dirname, "src", "index.ts"),
   },
   output: {
@@ -15,6 +16,9 @@ module.exports = {
   },
   resolve: {
     extensions: [".ts", ".js"],
+    alias: {
+      images: path.resolve(__dirname, "src/img/"),
+    },
   },
   module: {
     rules: [
@@ -33,6 +37,19 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          "file-loader",
+          {
+            loader: "image-webpack-loader",
+            options: {
+              bypassOnDebug: true,
+              disable: true,
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
@@ -40,5 +57,6 @@ module.exports = {
       template: "./src/index.html",
     }),
     new MiniCssExtractPlugin(),
+    new FaviconsWebpackPlugin("./src/img/icon.png"),
   ],
 };
