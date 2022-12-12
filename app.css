@@ -1,0 +1,100 @@
+/*!*********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/style.scss ***!
+  \*********************************************************************************************************/
+body {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  height: 600px;
+  width: 500px;
+}
+
+.message {
+  border: 2px solid rgb(88, 148, 213);
+  border-radius: 21px;
+  background-color: rgb(179, 207, 236);
+  margin: 0 6px 6px;
+  padding: 6px;
+}
+.message__container {
+  display: grid;
+  grid-template: "message__title message__title" 50px "message__history message__history" 1fr "message__nickname-input message__send-btn" 30px "message__text-input message__send-btn" 45px/4fr 2fr;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgb(0, 0, 0);
+  gap: 8px;
+  padding: 16px;
+  border-radius: 21px;
+  background: linear-gradient(rgb(201, 222, 246), rgb(113, 159, 216), rgb(83, 103, 129));
+  margin: auto;
+}
+.message__title {
+  font-size: 20px;
+  text-align: center;
+  grid-area: message__title;
+  background: url(2f88f014c40ebff1aeca.png) no-repeat;
+}
+.message__nickname-input {
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px 30px;
+  background-color: white;
+  color: rgb(0, 0, 0);
+  grid-area: message__nickname-input;
+  padding: 10px;
+}
+.message__nickname {
+  grid-area: message__nickname;
+  font-style: italic;
+}
+.message__date {
+  grid-area: message__date;
+  float: right;
+}
+.message__text {
+  grid-area: message__text;
+}
+.message__text-input {
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 30px 10px;
+  background-color: white;
+  color: rgb(0, 0, 0);
+  resize: none;
+  grid-area: message__text-input;
+  padding: 10px;
+}
+.message__send-btn {
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 30px 10px;
+  background-color: white;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  grid-area: message__send-btn;
+  font-size: 20px;
+}
+.message__send-btn:hover {
+  box-shadow: 0 12px 12px 0 rgba(42, 42, 113, 0.4), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.message__history {
+  background-color: rgb(255, 255, 255);
+  border-radius: 21px;
+  border: 1px solid rgb(0, 0, 0);
+  overflow-y: auto;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  padding: 8px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+  grid-area: message__history;
+}
+
+.error {
+  box-shadow: 0 0 0.5em red;
+}
