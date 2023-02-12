@@ -1,0 +1,117 @@
+body {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  height: 600px;
+  width: 500px;
+}
+
+.message {
+  border: 2px solid rgb(88 148 213);
+  border-radius: 21px;
+  background-color: rgb(179 207 236);
+  margin: 0 6px 6px;
+  padding: 6px;
+
+  &__container {
+    display: grid;
+    grid-template:
+      "message__title message__title" 50px
+      "message__history message__history" 1fr
+      "message__nickname-input message__send-btn" 30px
+      "message__text-input message__send-btn" 45px
+      / 4fr 2fr;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgb(0 0 0);
+    gap: 8px;
+    padding: 16px;
+    border-radius: 21px;
+    background: linear-gradient(
+      rgb(201 222 246),
+      rgb(113 159 216),
+      rgb(83 103 129)
+    );
+    margin: auto;
+  }
+
+  &__title {
+    font-size: 20px;
+    text-align: center;
+    grid-area: message__title;
+    background: url("./img/icon.png") no-repeat;
+  }
+
+  &__nickname-input {
+    border: 1px solid rgb(0 0 0);
+    border-radius: 10px 30px;
+    background-color: white;
+    color: rgb(0 0 0);
+    grid-area: message__nickname-input;
+    padding: 10px;
+  }
+
+  &__nickname {
+    grid-area: message__nickname;
+    font-style: italic;
+  }
+
+  &__date {
+    grid-area: message__date;
+    float: right;
+  }
+
+  &__text {
+    grid-area: message__text;
+  }
+
+  &__text-input {
+    border: 1px solid rgb(0 0 0);
+    border-radius: 30px 10px;
+    background-color: white;
+    color: rgb(0 0 0);
+    resize: none;
+    grid-area: message__text-input;
+    padding: 10px;
+  }
+
+  &__send-btn {
+    border: 1px solid rgb(0 0 0);
+    border-radius: 30px 10px;
+    background-color: white;
+    color: rgb(0 0 0);
+    cursor: pointer;
+    grid-area: message__send-btn;
+    font-size: 20px;
+  }
+
+  &__send-btn:hover {
+    box-shadow: 0 12px 12px 0 rgb(42 42 113 / 40%),
+      0 17px 50px 0 rgb(0 0 0 / 19%);
+  }
+
+  &__history {
+    background-color: rgb(255 255 255);
+    border-radius: 21px;
+    border: 1px solid rgb(0 0 0);
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    padding: 8px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 8px;
+    grid-area: message__history;
+  }
+}
+
+.error {
+  box-shadow: 0 0 0.5em red;
+}
